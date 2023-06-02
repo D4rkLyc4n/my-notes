@@ -1,0 +1,47 @@
+Docker notes
+
+install mysql and wordpress in docker
+
+install docker 
+
+sudo apt-get install podman
+
+create a network
+
+podman network create wordpress_network
+
+config
+
+sudo nano /etc/containers/registries.conf
+
+add things
+
+[registries.search]
+registries = ['docker.io', 'quay.io', 'registry.fedoraproject.org']
+
+pulling mysql
+
+podman pull docker.io/library/mysql:5.7
+
+run with mysql container
+
+podman run -d --name mysql-container --network wordpress_network -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress docker.io/library/mysql:5.7
+
+run the app
+
+podman run -d --name wordpress-container --network wordpress_network -e WORDPRESS_DB_HOST=mysql-container -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=password -e WORDPRESS_DB_NAME=wordpress -p 8080:80 wordpress
+
+
+to stop the app
+
+docker stop <container_name_or_id>
+
+to check name or id 
+
+podman ps
+
+podman images
+
+Download pj docker to local
+
+docker cp <container_id_or_name>:/var/www/html/ /path/to/local/directory
