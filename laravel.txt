@@ -1,0 +1,24 @@
+Creating Components:
+
+php artisan make:model ModelName: Generates a new Eloquent model class.
+php artisan make:controller ControllerName: Creates a new controller class.
+php artisan make:middleware MiddlewareName: Generates a new middleware class.
+php artisan make:migration CreateTableName: Creates a new database migration.
+Running Migrations and Seeds:
+
+php artisan migrate: Runs any pending database migrations.
+php artisan migrate:rollback: Rolls back the last batch of migrations.
+php artisan db:seed: Runs the database seeders.
+Generating Resources:
+
+php artisan make:resource ResourceName: Creates a new API resource class.
+php artisan make:request RequestName: Generates a new form request class.
+php artisan make:factory FactoryName: Creates a new model factory class.
+Managing Routes and Views:
+
+php artisan route:list: Lists all registered routes.
+php artisan make:route RouteName: Generates a new route file.
+php artisan make:view ViewName: Creates a new Blade view file.
+Running the Development Server:
+
+php artisan serve: Starts the Laravel development server.
